@@ -6,7 +6,15 @@ public class OnTrigger : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        audioSource.Play();
+        if (audioSource.isPlaying)
+        {
+            audioSource.Pause();
+        }
+
+        else
+        {
+            audioSource.UnPause();
+        }
     }
 
 }
